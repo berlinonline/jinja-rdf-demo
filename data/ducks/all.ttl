@@ -15,7 +15,7 @@ ducks: a void:Dataset ;
     dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
     dcterms:modified "2025-01-21"^^xsd:date ;
     dcterms:title "Duck Family Tree"@en ;
-    void:dataDump <https://raw.githubusercontent.com/berlinonline/jinja-rdf-demo/main/data/ducks/ducks.ttl> ;
+    void:dataDump <https://raw.githubusercontent.com/berlinonline/jinja-rdf-demo/main/data/ducks/all.ttl> ;
     void:exampleResource ducks:DonaldDuck,
         ducks:ScroogeMcDuck ;
     void:feature <http://www.w3.org/ns/formats/Turtle> ;
@@ -263,7 +263,7 @@ ducks:MatildaMcDuck a schema:Person ;
     schema:sameAs wd:Q2634870 .
 
 ducks:QuagmireMcDuck a schema:Person ;
-    family:hasParent _:nd03937257b4a4ad2b6d2fb3a53ecf30cb1 ;
+    family:hasParent _:n311a98e54332415abb72a6fbd0acf788b1 ;
     schema:gender "male" ;
     schema:name "David Duck"@de,
         "Quagmire McDuck"@en,
@@ -668,7 +668,7 @@ ducks:DellaDuck a schema:Person ;
     schema:sameAs wd:Q2746774 .
 
 ducks:DingusMcDuck a schema:Person ;
-    family:hasParent _:nd03937257b4a4ad2b6d2fb3a53ecf30cb1 ;
+    family:hasParent _:n311a98e54332415abb72a6fbd0acf788b1 ;
     schema:additionalName "Dirty"@en ;
     schema:gender "male" ;
     schema:name "Dingus McDuck"@en .

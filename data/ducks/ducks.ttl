@@ -16,7 +16,7 @@ ducks:
     dct:modified "2025-01-21"^^xsd:date ;
     dct:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
     foaf:homepage <https://github.com/berlinonline/jinja-rdf> ;
-    void:dataDump <https://raw.githubusercontent.com/berlinonline/jinja-rdf-demo/main/data/ducks/ducks.ttl> ;
+    void:dataDump <https://raw.githubusercontent.com/berlinonline/jinja-rdf-demo/main/data/ducks/all.ttl> ;
     void:feature <http://www.w3.org/ns/formats/Turtle> ;
     rdfs:seeAlso <https://en.wikipedia.org/wiki/Duck_family_(Disney)#Family_tree_by_Don_Rosa> ;
     rdfs:seeAlso <https://en.wikipedia.org/wiki/Clan_McDuck#Modern_family_tree_by_Don_Rosa> ;
