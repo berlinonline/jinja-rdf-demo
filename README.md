@@ -2,7 +2,7 @@
 
 This repository contains some examples for using Jinja-RDF to generate static websites from RDF.
 
-* [Duck Family Tree](example/ducks)
+* [Duck Family Tree](https://berlinonline.github.io/jinja-rdf-demo/example/ducks/)
 
 ## License
 
