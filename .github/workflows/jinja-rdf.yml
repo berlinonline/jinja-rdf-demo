@@ -30,9 +30,6 @@ jobs:
       - name: Install Python Requirements
         run: |
           pip install -r requirements.txt
-      - name: Build source RDF
-        run: |
-          make data/temp/all.nt
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
