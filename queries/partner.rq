@@ -1,0 +1,9 @@
+PREFIX ducks: <https://berlinonline.github.io/jinja-rdf-demo/example/ducks/>
+PREFIX family: <https://berlinonline.github.io/jinja-rdf-demo/example/ducks/vocab/>
+
+SELECT DISTINCT ?partner
+WHERE {
+    ?child family:hasParent ducks:HortenseMcDuck .
+    ?child family:hasParent ?partner .
+    FILTER(?partner != ducks:HortenseMcDuck)
+}

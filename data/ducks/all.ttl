@@ -1,0 +1,744 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ducks: <https://berlinonline.github.io/jinja-rdf-demo/example/ducks/> .
+@prefix family: <https://berlinonline.github.io/jinja-rdf-demo/example/ducks/vocab/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ducks: a void:Dataset ;
+    dcterms:created "2024-12-13"^^xsd:date ;
+    dcterms:description """Excerpt of the family tree of the fictional character Donald Duck. Sources for the
+    family tree are Wikipedia, for names in different langauges Wikidata."""@en ;
+    dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+    dcterms:modified "2025-01-21"^^xsd:date ;
+    dcterms:title "Duck Family Tree"@en ;
+    void:dataDump <https://raw.githubusercontent.com/berlinonline/jinja-rdf-demo/main/data/ducks/ducks.ttl> ;
+    void:exampleResource ducks:DonaldDuck,
+        ducks:ScroogeMcDuck ;
+    void:feature <http://www.w3.org/ns/formats/Turtle> ;
+    void:vocabulary family:,
+        schema: ;
+    rdfs:seeAlso <https://en.wikipedia.org/wiki/Clan_McDuck#Modern_family_tree_by_Don_Rosa>,
+        <https://en.wikipedia.org/wiki/Duck_family_(Disney)#Family_tree_by_Don_Rosa> ;
+    foaf:homepage <https://github.com/berlinonline/jinja-rdf> .
+
+ducks:AbnerDuck a schema:Person ;
+    family:hasParent ducks:EiderDuck,
+        ducks:LulubelleLoon ;
+    schema:additionalName "Whitewater"@en ;
+    schema:gender "male" ;
+    schema:name "Fætter Hidsigprop"@da,
+        "Abner Duck"@en,
+        "Whitewater Duck"@en,
+        "Sisuvius Ankka"@fi,
+        "Ábram Dunna"@fo,
+        "Whitewater Duck"@fr,
+        "Chiarafonte Duck"@it,
+        "Stokkstein Duck"@nb,
+        "Whitewater Duck"@nl,
+        "Zeca Pato"@pt,
+        "Snorke Anka"@sv ;
+    schema:sameAs wd:Q4131294 .
+
+ducks:AngusMcDuck a schema:Person ;
+    family:hasParent ducks:DingusMcDuck,
+        ducks:MollyMallard ;
+    schema:additionalName "Pothole"@en ;
+    schema:gender "male" ;
+    schema:name "Diethelm Duck"@de,
+        "Angus McDuck"@en,
+        "Angus \"Hiidenkirnu\" MacAnkka"@fi,
+        "Capitão Patico"@fr,
+        "Aulas Makdakas"@lt,
+        "Angus McDuck"@nb,
+        "Capitão Patico"@nl,
+        "Capitão Patico"@pt ;
+    schema:sameAs wd:Q12649672 .
+
+ducks:CuthbertCoot a schema:Person ;
+    family:hasParent ducks:CaseyCoot,
+        ducks:GretchenGrebe ;
+    schema:gender "male" ;
+    schema:name "Willibald Wasserhuhn"@de,
+        "Cuthbert Coot"@en,
+        "Kunnbjartur Sjógvhøna"@fo,
+        "Herbert Écoutum"@fr,
+        "Fetter Anders"@nb,
+        "Primo Bicudo"@nl,
+        "Primo Bicudo"@pt,
+        "Pelle Sothöna"@sv ;
+    schema:sameAs wd:Q18280122 .
+
+ducks:Dewey a schema:Person ;
+    family:hasParent ducks:DellaDuck ;
+    schema:gender "male" ;
+    schema:name "Jordinet"@ca,
+        "Dulík"@cs,
+        "Rap"@da,
+        "Trick"@de,
+        "Ντιούη"@el,
+        "Dewey"@en,
+        "Dewey Duck"@en,
+        "Dui"@eo,
+        "Jorgito"@es,
+        "Tupu Ankka"@fi,
+        "Fifi"@fr,
+        "Quo"@it,
+        "Dole"@nb,
+        "Kwek"@nl,
+        "Dyzio"@pl,
+        "Zezinho"@pt,
+        "Zezinho"@pt-br,
+        "Вилли"@ru,
+        "Fnatte Anka"@sv ;
+    schema:sameAs wd:Q27993410 .
+
+ducks:FethryDuck a schema:Person ;
+    family:hasParent ducks:EiderDuck,
+        ducks:LulubelleLoon ;
+    schema:gender "male" ;
+    schema:name "Fætter Vims"@da,
+        "Dussel Duck"@de,
+        "Φέθρυ Ντακ"@el,
+        "Fethry Duck"@en,
+        "Fethry Duck"@es,
+        "Touho Ankka"@fi,
+        "Fálgeir Dunna"@fo,
+        "Popop"@fr,
+        "Didi Bebek"@id,
+        "Fiðri frændi"@is,
+        "Paperoga"@it,
+        "Fethry Anas"@la,
+        "Dussel Duck"@lb,
+        "Klodrik"@nb,
+        "Diederik Duck"@nl,
+        "Dziobas"@pl,
+        "Peninha"@pt,
+        "Peninha"@pt-br,
+        "Knase Anka"@sv,
+        "Fethry Duck"@vec ;
+    schema:sameAs wd:Q2072455 .
+
+ducks:GladstoneGander a schema:Person ;
+    family:hasParent ducks:DaphneDuck,
+        ducks:GoostaveGander ;
+    schema:gender "male" ;
+    schema:name "محظوظ"@ar,
+        "محظوظ  Gladstone Gander"@arz,
+        "Gladstone Gander"@br,
+        "Gladstone Gander"@ca,
+        "Gusta"@cs,
+        "Fætter Højben"@da,
+        "Gustav Gans"@de,
+        "Γκαστόνε Γκάντερ"@el,
+        "Gladstone Gander"@en,
+        "Gladstone Gander"@es,
+        "Hannu Hanhi"@fi,
+        "Gulfinnur Gorront"@fo,
+        "Gontran Bonheur"@fr,
+        "Gúnár Gusztáv"@hu,
+        "Untung Angsa"@id,
+        "Hábeinn Heppni"@is,
+        "Gastone Paperone"@it,
+        "Gladstone Anas"@la,
+        "Žąsinas Pilypas"@lt,
+        "Fetter Anton"@nb,
+        "Guus Geluk"@nl,
+        "Goguś Kwabotyn"@pl,
+        "Gastão"@pt,
+        "Глэдстоун Гусак"@ru,
+        "Gladstone Gander"@sq,
+        "Alexander Lukas"@sv ;
+    schema:sameAs wd:Q854212 .
+
+ducks:GusGoose a schema:Person ;
+    family:hasParent ducks:FannyCoot,
+        ducks:LukeGoose ;
+    schema:gender "male" ;
+    schema:name "Fætter Guf"@da,
+        "Franz Gans"@de,
+        "Πασχάλης Χήνος"@el,
+        "Gus Goose"@en,
+        "Hansu Hanhi"@fi,
+        "Gánus Gás"@fo,
+        "Gus Glouton"@fr,
+        "Agus Angsa"@id,
+        "Ciccio dell'Oca"@it,
+        "Gus Anser"@la,
+        "Gargadonas"@lt,
+        "Gus Goose"@ms,
+        "Guffen"@nb,
+        "Gijs Gans"@nl,
+        "Gęgul Gęg"@pl,
+        "Gansolino"@pt,
+        "Mårten Gås"@sv ;
+    schema:sameAs wd:Q2000274 .
+
+ducks:Huey a schema:Person ;
+    family:hasParent ducks:DellaDuck ;
+    schema:gender "male" ;
+    schema:name "Joanet"@ca,
+        "Kulík"@cs,
+        "Rip"@da,
+        "Tick"@de,
+        "Χιούη"@el,
+        "Huey"@en,
+        "Huey Duck"@en,
+        "Hui"@eo,
+        "Jaimito"@es,
+        "Pato Hugo"@es,
+        "Hupu Ankka"@fi,
+        "Riri"@fr,
+        "Qui"@it,
+        "Ole"@nb,
+        "Kwik"@nl,
+        "Hyzio"@pl,
+        "Huguinho"@pt,
+        "Huguinho"@pt-br,
+        "Билли"@ru,
+        "Knatte Anka"@sv,
+        "修易"@zh ;
+    schema:sameAs wd:Q15698944 .
+
+ducks:JakeMcDuck a schema:Person ;
+    family:hasParent ducks:DingusMcDuck,
+        ducks:MollyMallard ;
+    schema:gender "male" ;
+    schema:name "Jakob Duck"@de,
+        "Jake McDuck"@en,
+        "Jake MacAnkka"@fi,
+        "Jake de' Paperoni"@fr,
+        "Jake de' Paperoni"@it,
+        "Jacob McDuck"@nb,
+        "Jake de' Paperoni"@nl,
+        "Nicolau Patusco"@pt ;
+    schema:sameAs wd:Q1053370 .
+
+ducks:Louie a schema:Person ;
+    family:hasParent ducks:DellaDuck ;
+    schema:gender "male" ;
+    schema:name "Jaumet"@ca,
+        "Bubík"@cs,
+        "Rup"@da,
+        "Track"@de,
+        "Λιούη"@el,
+        "Louie"@en,
+        "Louie Duck"@en,
+        "Lui"@eo,
+        "Jaimito"@es,
+        "Juanito"@es,
+        "Lupu Ankka"@fi,
+        "Loulou"@fr,
+        "Qua"@it,
+        "Doffen"@nb,
+        "Kwak"@nl,
+        "Zyzio"@pl,
+        "Luisinho"@pt,
+        "Luisinho"@pt-br,
+        "Дилли"@ru,
+        "Tjatte Anka"@sv ;
+    schema:sameAs wd:Q27993406 .
+
+ducks:MatildaMcDuck a schema:Person ;
+    family:hasParent ducks:DownyODrake,
+        ducks:FergusMcDuck ;
+    schema:gender "female" ;
+    schema:name "Andrea von And"@da,
+        "Mathilda Duck"@de,
+        "Ματίλντα Μακ Ντακ"@el,
+        "Matilda McDuck"@en,
+        "Matilda MacAnkka"@fi,
+        "Matilda Picsou"@fr,
+        "Matilda de' Paperoni"@it,
+        "Matilda Makdak"@lt,
+        "Penny McDuck"@nb,
+        "Doortje Duck"@nl,
+        "Matilda MacPatinhas"@pt,
+        "Матильда Макдак"@ru,
+        "Matilda von Anka"@sv,
+        "瑪蒂爾達·麥克杜克"@zh ;
+    schema:sameAs wd:Q2634870 .
+
+ducks:QuagmireMcDuck a schema:Person ;
+    family:hasParent _:nd03937257b4a4ad2b6d2fb3a53ecf30cb1 ;
+    schema:gender "male" ;
+    schema:name "David Duck"@de,
+        "Quagmire McDuck"@en,
+        "Quinquagésime McPicsou"@fr,
+        "Patrizio de Paperoni"@it,
+        "MicMac McDuck"@nb,
+        "Jeremias Borstel-Backenbaerth"@nl,
+        "Mac Sovinali"@pt ;
+    schema:sameAs wd:Q18280210 .
+
+ducks:CorneliusCoot a schema:Person ;
+    schema:gender "male" ;
+    schema:name "Kornelius Blisand"@da,
+        "Emil Erpel"@de,
+        "Cornelius Coot"@en,
+        "Julle Ankanpää"@fi,
+        "Kornelius Knarront"@fo,
+        "Cornélius Écoutum"@fr,
+        "Cornelius Coot"@it,
+        "Gagis Beragis"@lt,
+        "Kornelius Kvakk"@nb,
+        "Cornelis Prul"@nl,
+        "Korneliusz Kwaczak"@pl,
+        "Cornélio Patus"@pt,
+        "Cornelius Knös"@sv ;
+    schema:sameAs wd:Q2717315 .
+
+ducks:DaphneDuck a schema:Person ;
+    family:hasParent ducks:ElviraCoot,
+        ducks:HumperdinkDuck ;
+    schema:gender "male" ;
+    schema:name "Daphne Duck"@de,
+        "Daphne Duck"@en,
+        "Dora Ankka"@fi,
+        "Patrícia Pato"@fr,
+        "ダフネ・ダック"@ja,
+        "Dora Duck"@nb,
+        "Patrícia Pato"@nl,
+        "Patrícia Pato"@pt,
+        "Doris Anka"@sv ;
+    schema:sameAs wd:Q10346190 .
+
+ducks:DonaldDuck a schema:Person ;
+    family:hasParent ducks:HortenseMcDuck,
+        ducks:QuackmoreDuck ;
+    schema:gender "male" ;
+    schema:name "Donald Duck"@af,
+        "بطوط"@ar,
+        "بطوط"@arz,
+        "Donald Duck"@ast,
+        "Donald Dak"@az,
+        "Доналд Дък"@bg,
+        "ডোনাল্ড ডাক"@bn,
+        "གདང་ཡ་ཙེ།"@bo,
+        "Donald Duck"@br,
+        "Pajo Patak"@bs,
+        "Ànec Donald"@ca,
+        "Donald Duck"@ceb,
+        "Kačer Donald"@cs,
+        "Donald Duck"@cy,
+        "Anders And"@da,
+        "Donald Duck"@de,
+        "Donald Duck"@de-ch,
+        "Ντόναλντ Ντακ"@el,
+        "Donald Duck"@en,
+        "Donald Duck"@en-ca,
+        "Donald Duck"@en-gb,
+        "Donaldo Anaso"@eo,
+        "Pato Donald"@es,
+        "Piilupart Donald"@et,
+        "Donald ahatea"@eu,
+        "دانلد داک"@fa,
+        "Aku Ankka"@fi,
+        "Dunnaldur Dunna"@fo,
+        "Donald Duck"@fr,
+        "Donald Duck"@fy,
+        "Donald Duck"@ga,
+        "Pato Donald"@gl,
+        "Donald Duck"@gsw,
+        "ડોનાલ્ડ ડક"@gu,
+        "Donald Duck"@haw,
+        "דונלד דאק"@he,
+        "डोनाल्ड डक"@hi,
+        "Donald Duck"@hif,
+        "Paško Patak"@hr,
+        "Donald kacsa"@hu,
+        "Դոնալդ Դաք"@hy,
+        "Տոնալտ Տաք"@hyw,
+        "Donald Duck"@ia,
+        "Donal Bebek"@id,
+        "Anado Donald"@io,
+        "Andrés Önd"@is,
+        "Paperino"@it,
+        "ドナルドダック"@ja,
+        "Donal Bèbèk"@jv,
+        "დონალდ დაკი"@ka,
+        "Дональд Дак"@kk,
+        "ಡೊನಾಲ್ಡ್ ಡಕ್"@kn,
+        "도널드 덕"@ko,
+        "Donald Duck"@ku,
+        "Donaldus Anas"@la,
+        "Donald Duck"@lb,
+        "Donald Duck"@li,
+        "Donald Duck"@lmo,
+        "Antulis Donaldas"@lt,
+        "Donalds Daks"@lv,
+        "Пајо Паторот"@mk,
+        "ഡൊണാൾഡ് ഡക്ക്"@ml,
+        "डोनाल्ड डक"@mr,
+        "Дональд Дак"@mrj,
+        "Donald Duck"@ms,
+        "Donald Duck"@nb,
+        "Donald Duck"@nds,
+        "Donald Duck"@nl,
+        "Donald Duck"@nn,
+        "Donald Duck"@oc,
+        "Donald Duck"@pcd,
+        "Kaczor Donald"@pl,
+        "ڈونلڈ ڈک"@pnb,
+        "Pato Donald"@pt,
+        "Pato Donald"@pt-br,
+        "Donald Patu"@qu,
+        "Donald Duck"@ro,
+        "Дональд Дак"@ru,
+        "Donald Duck"@rup,
+        "Donald Duck"@sc,
+        "Donald Duck"@scn,
+        "Donald Duck"@sco,
+        "Donald Duck"@sd,
+        "Vulle Vuojaš"@se,
+        "Donald Duck"@sh,
+        "Jaka Racman"@sl,
+        "Donald Duck"@sq,
+        "Паја Патак"@sr,
+        "Donald Bébék"@su,
+        "Kalle Anka"@sv,
+        "డోనాల్డ్ డక్"@te,
+        "โดนัลด์ ดั๊ก"@th,
+        "Donald Duck"@tl,
+        "Donald Duck"@tr,
+        "Donald Duck"@ty,
+        "Дональд Дак"@uk,
+        "Donald Duck"@uz,
+        "Donald Duck"@vec,
+        "Donald Duck"@vep,
+        "Vịt Donald"@vi,
+        "Donald Duck"@war,
+        "唐老鸭"@wuu,
+        "דאנאלד דאק"@yi,
+        "唐老鴨"@yue,
+        "唐老鸭"@zh,
+        "唐老鸭"@zh-cn,
+        "唐老鸭"@zh-hans,
+        "唐老鸭"@zh-hant ;
+    schema:sameAs wd:Q6550 .
+
+ducks:FannyCoot a schema:Person ;
+    family:hasParent ducks:CaseyCoot,
+        ducks:GretchenGrebe ;
+    schema:gender "female" ;
+    schema:name "Wilhelmine Erpel"@de,
+        "Fanny Coot"@en,
+        "Casi Kvakk"@nb,
+        "Fanny Coot"@nl,
+        "Gansólia"@pt,
+        "Fanny Knös"@sv ;
+    schema:sameAs wd:Q10493987 .
+
+ducks:GoostaveGander a schema:Person ;
+    schema:gender "male" ;
+    schema:name "Goostave Gander"@en,
+        "Hjalmar Hanhi"@fi,
+        "Gustavo Paperone"@it,
+        "Onkel Andrik"@nb,
+        "Gustavo Ganso"@nl,
+        "Gustavo Ganso"@pt,
+        "Gåsfrid Lukas"@sv ;
+    schema:sameAs wd:Q10293102 .
+
+ducks:LukeGoose a schema:Person ;
+    schema:gender "male" ;
+    schema:name "Gangolf Gans"@de,
+        "Luke Goose"@en,
+        "Luca dell'Oca"@it,
+        "Gunnar Gås"@nb,
+        "Ganso Gabriel"@nl,
+        "Ganso Gabriel"@pt,
+        "Gabriel Gås"@sv,
+        "where's my goose Gary"@zh-hant ;
+    schema:sameAs wd:Q18275266 .
+
+ducks:ScroogeMcDuck a schema:Person ;
+    family:hasParent ducks:DownyODrake,
+        ducks:FergusMcDuck ;
+    schema:gender "male" ;
+    schema:name "دهب"@ar,
+        "عم دهب   Scrooge McDuck"@arz,
+        "Skruc MakDak"@az,
+        "Scrooge McDuck"@br,
+        "Oncle Garrepa"@ca,
+        "Scrooge McDuck"@ceb,
+        "Strýček Skrblík"@cs,
+        "Joakim von And"@da,
+        "Dagobert Duck"@de,
+        "Σκρουτζ Μακ Ντακ"@el,
+        "Scrooge McDuck"@en,
+        "Scrooge McDuck"@en-ca,
+        "Scrooge McDuck"@en-gb,
+        "Scrooge McDuck"@eo,
+        "Scrooge McDuck"@es,
+        "Onu Robert"@et,
+        "Scrooge McDuck"@eu,
+        "اسکروج مکداک"@fa,
+        "Roope Ankka"@fi,
+        "Gírikur McGvagg"@fo,
+        "Balthazar Picsou"@fr,
+        "Scrooge McDuck"@ga,
+        "Scrooge McDuck"@gl,
+        "הדוד קמצוץ"@he,
+        "स्क्रूज मैकडक"@hi,
+        "Dagobert McCsip"@hu,
+        "Սկրուջ Մակդաք"@hy,
+        "Gober Bebek"@id,
+        "Jóakim Aðalönd"@is,
+        "Paperon de' Paperoni"@it,
+        "スクルージ・マクダック"@ja,
+        "Gober Bèbèk"@jv,
+        "სკრუჯ მაკ-დაკი"@ka,
+        "스크루지 맥덕"@ko,
+        "Scrugulus Anas"@la,
+        "Dagobert Duck"@lb,
+        "Barba Scrooge"@lmo,
+        "Skrudžas Makdakas"@lt,
+        "Knaps Makdaks"@lv,
+        "Бајо Паторот"@mk,
+        "Skrue McDuck"@nb,
+        "Dagobert Duck"@nl,
+        "Skrue McDuck"@nn,
+        "Sknerus McKwacz"@pl,
+        "Tio Patinhas"@pt,
+        "Tio Patinhas"@pt-br,
+        "Scrooge McDuck"@ro,
+        "Скрудж Макдак"@ru,
+        "Ziu Papiruni"@scn,
+        "Scrooge McDuck"@sco,
+        "Scrooge McDuck"@sq,
+        "Баја Патак"@sr,
+        "Joakim von Anka"@sv,
+        "Varyemez Amca"@tr,
+        "Скрудж Макдак"@uk,
+        "史高治·麦克老鸭"@zh,
+        "Picsou"@zu ;
+    schema:sameAs wd:Q11937 .
+
+ducks:CaseyCoot a schema:Person ;
+    family:hasParent ducks:ClintonCoot,
+        ducks:GertrudeGadwall ;
+    schema:gender "male" ;
+    schema:name "Emanuel Erpel"@de,
+        "Casey Coot"@en,
+        "Konrad Ankanpää"@fi,
+        "Jules Écoutum"@fr,
+        "Casey Coot"@it,
+        "Konrad Kvakk"@nb,
+        "Casey Coot"@nl,
+        "Patus Quela"@pt,
+        "Patus Quela"@pt-br,
+        "Kurre Knös"@sv ;
+    schema:sameAs wd:Q1053291 .
+
+ducks:ClintonCoot a schema:Person ;
+    family:hasParent ducks:CorneliusCoot ;
+    schema:gender "male" ;
+    schema:name "Emelrich Erpel"@de,
+        "Clinton Coot"@en,
+        "Cipriano Patus"@es,
+        "Clinton Écoutum"@fr,
+        "Clinton Coot"@it,
+        "Cipriano Patus"@lt,
+        "Clinton Kvakk"@nb,
+        "Cipriano Patus"@nl,
+        "Cipriano Patus"@pt,
+        "Clinton Coot"@sq,
+        "Cyprianus Knös"@sv ;
+    schema:sameAs wd:Q18244006 .
+
+ducks:EiderDuck a schema:Person ;
+    family:hasParent ducks:ElviraCoot,
+        ducks:HumperdinkDuck ;
+    schema:gender "male" ;
+    schema:name "Eider Duck"@en,
+        "Barnabé Duck"@fr,
+        "Eider Duck"@it,
+        "Eddy Duck"@nb,
+        "Éder Patolfo"@pt,
+        "Unkas Anka"@sv ;
+    schema:sameAs wd:Q3175672 .
+
+ducks:GertrudeGadwall a schema:Person ;
+    schema:gender "female" ;
+    schema:name "Gunhilda Gans"@de,
+        "Gertrude Gadwall"@en,
+        "Gertrude Folaga"@it,
+        "Gjertrud Kvakk"@nb,
+        "Ambrósia Patus"@nl,
+        "Ambrósia Patus"@pt ;
+    schema:sameAs wd:Q18237508 .
+
+ducks:GretchenGrebe a schema:Person ;
+    schema:gender "female" ;
+    schema:name "Wilberta Wasserhuhn"@de,
+        "Gretchen Grebe"@en,
+        "Gretchen Gans"@nb ;
+    schema:sameAs wd:Q47495381 .
+
+ducks:HortenseMcDuck a schema:Person ;
+    family:hasParent ducks:DownyODrake,
+        ducks:FergusMcDuck ;
+    schema:gender "female" ;
+    schema:name "Hortense McDuck"@ca,
+        "Hortensia von And"@da,
+        "Dortel Duck"@de,
+        "Χορτένσε Ντακ"@el,
+        "Hortense McDuck"@en,
+        "Hortensia MacAnkka"@fi,
+        "Hjørdis McGvagg"@fo,
+        "Hortense Picsou"@fr,
+        "Hortensia Bebek"@id,
+        "Ortensia de' Paperoni"@it,
+        "ホーテンス・マクダック"@ja,
+        "Hortense McDuck"@lb,
+        "Hortenzija Makdak"@lt,
+        "Lillegull McDuck"@nb,
+        "Hortensia Duck"@nl,
+        "Hortensja McKwacz"@pl,
+        "Hortênsia MacPatinhas"@pt,
+        "Гортензия Макдак"@ru,
+        "Hortensia von Anka"@sv,
+        "霍滕絲·麥克達克"@zh ;
+    schema:sameAs wd:Q2352969 .
+
+ducks:LulubelleLoon a schema:Person ;
+    schema:gender "female" ;
+    schema:name "Lulubelle Loon"@en,
+        "Lulla Lom"@nb,
+        "Lulubelle Loon"@nl,
+        "Patina Dora"@pt,
+        "Lucinda Lom"@sv ;
+    schema:sameAs wd:Q10570397 .
+
+ducks:QuackmoreDuck a schema:Person ;
+    family:hasParent ducks:ElviraCoot,
+        ducks:HumperdinkDuck ;
+    schema:gender "male" ;
+    schema:name "Quackmore Duck"@ca,
+        "Rapmus And"@da,
+        "Degenhard Duck"@de,
+        "Κούακμορ Ντακ"@el,
+        "Quackmore Duck"@en,
+        "Aaron Ankka"@fi,
+        "Rodolphe Duck"@fr,
+        "Kweker Bebek"@id,
+        "Quackmore Duck"@it,
+        "Quackmore Duck"@lb,
+        "Didrik Duck"@nb,
+        "Woerd Snater Duck"@nl,
+        "Kaczor Kwaczymon"@pl,
+        "Patoso"@pt,
+        "Kvacke Anka"@sv,
+        "誇克莫爾·達克"@zh ;
+    schema:sameAs wd:Q3219745 .
+
+ducks:DellaDuck a schema:Person ;
+    family:hasParent ducks:HortenseMcDuck,
+        ducks:QuackmoreDuck ;
+    schema:gender "female" ;
+    schema:name "ডেলা ডাক"@bn,
+        "Della Duck"@ca,
+        "Della And"@da,
+        "Della Duck"@de,
+        "Ντέλλα Ντακ"@el,
+        "Della Duck"@en,
+        "Bella Pato"@es,
+        "Della Pato"@es,
+        "Della Ankka"@fi,
+        "Della Duck"@fr,
+        "Della Duck"@ga,
+        "Dumbella Bebek"@id,
+        "Della Önd"@is,
+        "Della Duck"@it,
+        "デラ・ダック"@ja,
+        "Della Duck"@lb,
+        "Della Duck"@nb,
+        "Dumbella Duck"@nl,
+        "Kaczka Della Thelma"@pl,
+        "Dumbela Pato"@pt,
+        "Dumbela Pato"@pt-br,
+        "Делла Дак"@ru,
+        "Della Anka"@sv,
+        "Della Duck"@vi,
+        "德拉·特爾瑪·達克"@zh ;
+    schema:sameAs wd:Q2746774 .
+
+ducks:DingusMcDuck a schema:Person ;
+    family:hasParent _:nd03937257b4a4ad2b6d2fb3a53ecf30cb1 ;
+    schema:additionalName "Dirty"@en ;
+    schema:gender "male" ;
+    schema:name "Dingus McDuck"@en .
+
+ducks:DownyODrake a schema:Person ;
+    schema:gender "female" ;
+    schema:name "Clementine O'And"@da,
+        "Dankrade Duck"@de,
+        "Downy O'Drake"@en,
+        "Lauha MacAnkka"@fi,
+        "Édith O'Drake"@fr,
+        "Piumina O'Drake"@it,
+        "Tetulė Antulė"@lt,
+        "Myra McDuck"@nb,
+        "Downy O'Drake"@nl,
+        "Donilda O'Pata"@pt,
+        "Доуни О'Дрейк"@ru,
+        "Dunhilde O'Rapp"@sv,
+        "唐妮·奧德雷克"@zh ;
+    schema:sameAs wd:Q2641631 .
+
+ducks:ElviraCoot a schema:Person ;
+    family:hasParent ducks:ClintonCoot,
+        ducks:GertrudeGadwall ;
+    schema:additionalName "Grandma Duck"@en ;
+    schema:gender "female" ;
+    schema:name "Elvira Coot"@en .
+
+ducks:FergusMcDuck a schema:Person ;
+    family:hasParent ducks:DingusMcDuck,
+        ducks:MollyMallard ;
+    schema:gender "male" ;
+    schema:name "Frederik von And"@da,
+        "Dietbert Duck"@de,
+        "Φέργκους Μακ Ντακ"@el,
+        "Fergus McDuck"@en,
+        "Fergus MacAnkka"@fi,
+        "Fergus McPicsou"@fr,
+        "Fergus de' Paperoni"@it,
+        "Fergis Makdakas"@lt,
+        "Fergus McDuck"@nb,
+        "Fergus McDuck"@nl,
+        "Fergus McKwacz"@pl,
+        "Fergus MacPatinhas"@pt,
+        "Фергус Макдак"@ru,
+        "Fergus von Anka"@sv,
+        "弗格森·麥克達克"@zh ;
+    schema:sameAs wd:Q2637635 .
+
+ducks:HumperdinkDuck a schema:Person ;
+    schema:gender "male" ;
+    schema:name "Hilmar Duck"@de,
+        "Humperdink Duck"@en,
+        "Dabney Pato"@es,
+        "Hepsu Ankka"@fi,
+        "Joseph Duck"@fr,
+        "Humperdink Duck"@it,
+        "Hilmar Duck"@nb,
+        "Humperdink Duck"@nl,
+        "Tomás Reco"@pt,
+        "Farfar Anka"@sv ;
+    schema:sameAs wd:Q3311261 .
+
+ducks:MollyMallard a schema:Person ;
+    schema:gender "female" ;
+    schema:name "Sørine Stokand"@da,
+        "Molly Mallard"@en,
+        "Molly Mallard"@id,
+        "Molly Mallard"@it,
+        "Solveig Stokkand"@nb,
+        "Molly Mallard"@nl ;
+    schema:sameAs wd:Q2246647 .
+

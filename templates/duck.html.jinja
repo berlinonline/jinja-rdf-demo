@@ -1,0 +1,127 @@
+{% extends "base.html.jinja" %}
+
+{% set type_icon = 'file-person' %}
+{% set local_name = node.split('/') | last %}
+{% set title = node | title_any(languages=['de', 'en'], default=local_name) %}
+{% set additional_languages = [ 'de', 'en', 'da', 'fr', 'es', 'el', 'ja', 'fi', 'ko', 'zh']%}
+
+{% block page_title %}
+  {{ title }}
+  {% set additional_name = node | rdf_property_any(SCHEMA.additionalName, 'en') %}
+  {% if additional_name %}
+    ("{{ additional_name}}")
+  {% endif %}
+{% endblock page_title %}
+
+
+{% block content %}
+
+  {% set names = node | rdf_property(SCHEMA.name) %}
+  {% if names | length > 0 %}
+    <div class="row">
+      <div class="col-lg-6 col-md-10 col-sm-12">
+        <h2>Namen in verschiedenen Sprachen</h2>
+        <table class="table table-striped align-middle">
+          <tbody>
+            {% for name in names | sort(attribute='language') %}
+              {% if name.language in additional_languages %}
+                <tr>
+                  <td>{{ name }}</td>
+                  <td>{{ name.language }}</td>
+                </tr>
+              {% endif %}
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  {% endif %}
+
+  <div class="row">
+    {% set parents = node | rdf_property(FAMILY.hasParent) %}
+    {% if parents %}
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <h2>Eltern</h2>
+        <ul>
+          {% for parent in parents %}
+            <li>
+              {% if parent | is_iri %}<a href="{{ parent | relative_uri }}">{% endif %}
+                {{ parent | title_any(['de', 'en'], 'Unbekannt') }}
+              {% if parent | is_iri  %}</a>{% endif%}
+              {% set gender = parent | rdf_property_any(SCHEMA.gender) | toPython %}
+              {% if gender == 'female' %}
+                (Mutter)
+              {% elif gender == 'male' %}
+                (Vater)
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+
+    {% set children = node | rdf_inverse_property(FAMILY.hasParent) %}
+    {% if children %}
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <h2>Kinder</h2>
+        <ul>
+          {% for child in children %}
+            <li><a href="{{ child | relative_uri }}">{{ child | title_any(['de', 'en']) }}</a>
+              {% set gender = child | rdf_property_any(SCHEMA.gender) | toPython %}
+              {% if gender == 'female' %}
+                (Tochter)
+              {% elif gender == 'male' %}
+                (Sohn)
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+  </div>
+  
+  <div class="row">
+    {% set partner_query = """SELECT DISTINCT ?partner
+    WHERE {
+      ?child family:hasParent ?resourceUri .
+      ?child family:hasParent ?partner .
+      FILTER(?partner != ?resourceUri)
+    }"""%}
+    {% set results = node | sparql_query(partner_query) %}
+    {% if results %}
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <h2>Partner</h2>
+        <ul>
+          {% for result in results %}
+            {% set partner = result['partner'] %}
+            <li>
+              <a href="{{ partner | relative_uri }}">{{ partner | title_any(['de', 'en']) }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+
+    {% set sibling_query = """SELECT DISTINCT ?sibling
+    WHERE {
+      ?resourceUri family:hasParent ?parent .
+      ?sibling family:hasParent ?parent .
+      FILTER(?sibling != ?resourceUri)
+    }"""%}
+    {% set results = node | sparql_query(sibling_query) %}
+    {% if results %}
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <h2>Geschwister</h2>
+        <ul>
+          {% for result in results %}
+            {% set sibling = result['sibling'] %}
+            <li>
+              <a href="{{ sibling | relative_uri }}">{{ sibling | title_any(['de', 'en']) }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+  </div>
+
+{% endblock content %}

@@ -1,0 +1,226 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix schema: <https://schema.org/> .
+@prefix ducks: <https://berlinonline.github.io/jinja-rdf-demo/example/ducks/> .
+@prefix family: <https://berlinonline.github.io/jinja-rdf-demo/example/ducks/vocab/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ducks:
+    a void:Dataset ;
+    dct:title "Duck Family Tree"@en ;
+    dct:description """Excerpt of the family tree of the fictional character Donald Duck. Sources for the
+    family tree are Wikipedia, for names in different langauges Wikidata."""@en ;
+    dct:created "2024-12-13"^^xsd:date ;
+    dct:modified "2025-01-21"^^xsd:date ;
+    dct:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+    foaf:homepage <https://github.com/berlinonline/jinja-rdf> ;
+    void:dataDump <https://raw.githubusercontent.com/berlinonline/jinja-rdf-demo/main/data/ducks/ducks.ttl> ;
+    void:feature <http://www.w3.org/ns/formats/Turtle> ;
+    rdfs:seeAlso <https://en.wikipedia.org/wiki/Duck_family_(Disney)#Family_tree_by_Don_Rosa> ;
+    rdfs:seeAlso <https://en.wikipedia.org/wiki/Clan_McDuck#Modern_family_tree_by_Don_Rosa> ;
+    void:exampleResource ducks:DonaldDuck ;
+    void:exampleResource ducks:ScroogeMcDuck ;
+    void:vocabulary schema: , family: ;
+.
+
+# Characters
+ducks:DonaldDuck a schema:Person ;
+    schema:name  "Donald Duck"@en, "Donald Duck"@de, "Donald Duck"@fr, "Pato Donald"@es, "Anders And"@da ;
+    schema:gender "male" ;
+    family:hasParent ducks:QuackmoreDuck, ducks:HortenseMcDuck .
+
+ducks:DellaDuck a schema:Person ;
+    schema:name "Della Duck"@en, "Della Duck"@de, "Della Duck"@fr, "Bella Pato"@es, "Della And"@da ;
+    schema:gender "female" ;
+    family:hasParent ducks:QuackmoreDuck, ducks:HortenseMcDuck .
+
+ducks:Huey a schema:Person ;
+    schema:name "Huey"@en, "Tick"@de, "Riri"@fr, "Jaimito"@es, "Rip"@da ;
+    schema:gender "male" ;
+    family:hasParent ducks:DellaDuck .
+
+ducks:Dewey a schema:Person ;
+    schema:name "Dewey"@en, "Trick"@de, "Fifi"@fr, "Jorgito"@es, "Rap"@da ;
+    schema:gender "male" ;
+    family:hasParent ducks:DellaDuck .
+
+ducks:Louie a schema:Person ;
+    schema:name "Louie"@en, "Track"@de, "Loulou"@fr, "Juanito"@es, "Rup"@da ;
+    schema:gender "male" ;
+    family:hasParent ducks:DellaDuck .
+
+# Ducks
+
+ducks:QuackmoreDuck a schema:Person ;
+    schema:name "Quackmore Duck"@en ;
+    schema:gender "male" ;
+    family:hasParent ducks:ElviraCoot , ducks:HumperdinkDuck ;
+.
+
+ducks:EiderDuck a schema:Person ;
+    schema:name "Eider Duck"@en ;
+    schema:gender "male" ;
+    family:hasParent ducks:ElviraCoot , ducks:HumperdinkDuck ;
+.
+
+ducks:DaphneDuck a schema:Person ;
+    schema:name "Daphne Duck"@en ;
+    schema:gender "male" ;
+    family:hasParent ducks:ElviraCoot , ducks:HumperdinkDuck ;
+.
+
+ducks:ElviraCoot a schema:Person ;
+    schema:name "Elvira Coot"@en ;
+    schema:additionalName "Grandma Duck"@en ;
+    schema:gender "female" ;
+    family:hasParent ducks:ClintonCoot , ducks:GertrudeGadwall ;
+.
+
+ducks:HumperdinkDuck a schema:Person ;
+    schema:name "Humperdink Duck"@en ;
+    schema:gender "male" ;
+.
+
+ducks:CaseyCoot a schema:Person ;
+    schema:name "Casey Coot"@en ;
+    schema:gender "male" ;
+    family:hasParent ducks:ClintonCoot , ducks:GertrudeGadwall ;
+.
+
+ducks:ClintonCoot a schema:Person ;
+    schema:name "Clinton Coot"@en ;
+    schema:gender "male" ;
+    family:hasParent ducks:CorneliusCoot;
+.
+
+ducks:CorneliusCoot a schema:Person ;
+    schema:name "Cornelius Coot"@en ;
+    schema:gender "male" ;
+.
+
+ducks:GertrudeGadwall a schema:Person ;
+    schema:name "Gertrude Gadwall"@en ;
+    schema:gender "female" ;
+.
+
+ducks:GretchenGrebe a schema:Person ;
+    schema:name "Gretchen Grebe"@en ;
+    schema:gender "female" ;
+.
+
+ducks:CuthbertCoot a schema:Person ;
+    schema:name "Cuthbert Coot"@en ;
+    schema:gender "male" ;
+    family:hasParent ducks:GretchenGrebe, ducks:CaseyCoot ;
+.
+
+ducks:FannyCoot a schema:Person ;
+    schema:name "Fanny Coot"@en ;
+    schema:gender "female" ;
+    family:hasParent ducks:GretchenGrebe, ducks:CaseyCoot ;
+.
+
+ducks:LukeGoose a schema:Person ;
+    schema:name "Luke Goose"@en ;
+    schema:gender "male" ;
+.
+
+ducks:GusGoose a schema:Person ;
+    schema:name "Gus Goose"@en ;
+    schema:gender "male" ;
+    family:hasParent ducks:FannyCoot , ducks:LukeGoose ;
+.
+
+ducks:LulubelleLoon a schema:Person ;
+    schema:name "Lulubelle Loon"@en ;
+    schema:gender "female" ;
+.
+
+ducks:FethryDuck a schema:Person ;
+    schema:name "Fethry Duck"@en ;
+    schema:gender "male" ;
+    family:hasParent ducks:LulubelleLoon, ducks:EiderDuck ;
+.
+
+ducks:AbnerDuck a schema:Person ;
+    schema:name "Abner Duck"@en ;
+    schema:additionalName "Whitewater"@en ;
+    schema:gender "male" ;
+    family:hasParent ducks:LulubelleLoon, ducks:EiderDuck ;
+.
+
+ducks:GoostaveGander a schema:Person ;
+    schema:name "Goostave Gander"@en ;
+    schema:gender "male" ;
+.
+
+ducks:GladstoneGander a schema:Person ;
+    schema:name "Gladstone Gander"@en ;
+    schema:gender "male" ;
+    family:hasParent ducks:DaphneDuck , ducks:GoostaveGander ;
+.
+
+
+# McDucks
+
+ducks:HortenseMcDuck a schema:Person ;
+    schema:name "Hortense McDuck"@en ;
+    schema:gender "female" ;
+    family:hasParent ducks:FergusMcDuck, ducks:DownyODrake ;
+.
+
+ducks:ScroogeMcDuck a schema:Person ;
+    schema:name "Scrooge McDuck"@en ;
+    schema:gender "male" ;
+    family:hasParent ducks:FergusMcDuck, ducks:DownyODrake ;
+.
+
+ducks:MatildaMcDuck a schema:Person ;
+    schema:name "Matilda McDuck"@en ;
+    schema:gender "female" ;
+    family:hasParent ducks:FergusMcDuck, ducks:DownyODrake ;
+.
+
+ducks:FergusMcDuck a schema:Person ;
+    schema:name "Fergus McDuck"@en ;
+    schema:gender "male" ;
+    family:hasParent ducks:DingusMcDuck, ducks:MollyMallard ;
+.
+
+ducks:DownyODrake a schema:Person ;
+    schema:name "Downy O'Drake"@en ;
+    schema:gender "female" ;
+.
+
+ducks:AngusMcDuck a schema:Person ;
+    schema:name "Angus McDuck"@en ;
+    schema:additionalName "Pothole"@en ;
+    schema:gender "male" ;
+    family:hasParent ducks:DingusMcDuck, ducks:MollyMallard ;
+.
+
+ducks:JakeMcDuck a schema:Person ;
+    schema:name "Jake McDuck"@en ;
+    schema:gender "male" ;
+    family:hasParent ducks:DingusMcDuck, ducks:MollyMallard ;
+.
+
+ducks:DingusMcDuck a schema:Person ;
+    schema:name "Dingus McDuck"@en ;
+    schema:additionalName "Dirty"@en ;
+    schema:gender "male" ;
+    family:hasParent _:dingusparent ;
+.
+
+ducks:QuagmireMcDuck a schema:Person ;
+    schema:name "Quagmire McDuck"@en ;
+    schema:gender "male" ;
+    family:hasParent _:dingusparent ;
+.
+
+ducks:MollyMallard a schema:Person ;
+    schema:name "Molly Mallard"@en ;
+    schema:gender "female" ;
+.

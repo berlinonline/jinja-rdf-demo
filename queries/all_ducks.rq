@@ -1,0 +1,13 @@
+# all ducks with their English names
+
+PREFIX ducks: <https://berlinonline.github.io/jinja-rdf-demo/example/ducks/>
+PREFIX schema: <https://schema.org/>
+
+SELECT DISTINCT ?name
+WHERE {
+    ?duck
+        a schema:Person ;
+        schema:name ?name .
+    FILTER(lang(?name) = 'en')
+}
+ORDER BY ?name

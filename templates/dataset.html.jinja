@@ -1,0 +1,146 @@
+{% extends "base.html.jinja" %}
+
+{% set type_icon = 'database' %}
+{% set local_name = node.split('/') | last %}
+{% set title = node | title_any(languages=['de', 'en'], default=local_name) %}
+
+{% block breadcrumbs %}
+  <div class="row breadcrumbs">
+    <div class="col-12">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            {{ dataset_breadcrumb }}
+          </li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+{% endblock breadcrumbs %}
+
+{% block info_table_content %}
+
+  {{ super() }}
+
+  {% set date_created = node | rdf_property_any(DCT.created) %}
+  {% if date_created %}
+    <tr>
+      <td>zuerst erstellt am:</td>
+      <td>{{ date_created }}</td>
+    </tr>
+  {% endif %}
+
+  {% set date_modified = node | rdf_property_any(DCT.modified) %}
+  {% if date_modified %}
+    <tr>
+      <td>zuerst geändert am:</td>
+      <td>{{ date_modified }}</td>
+    </tr>
+  {% endif %}
+
+  {% set publishers = node | rdf_property(DCT.publisher) %}
+  {% for publisher in publishers | sort %}
+    <tr>
+      <td>Veröffentlichende Stelle:</td>
+      <td>
+        <a href="{{ publisher }}">
+          {% set publisher_local_name = helper.prefix_label(publisher) %}
+          {{ publisher | title_any(['de', 'en'], publisher_local_name) }}
+        </a>
+      </td>
+    </tr>
+  {% endfor %}
+
+  {% set homepage = node | rdf_property_any(FOAF.homepage) %}
+  {% if homepage %}
+    <tr>
+      <td>Homepage:</td>
+      <td>
+        <a href="{{ homepage }}">
+          {{ homepage }}
+        </a>
+      </td>
+    </tr>
+  {% endif %}
+
+  {% set example_resources = node | rdf_property(VOID.exampleResource) %}
+  {% for resource in example_resources %}
+    <tr>
+      <td>Beispielressource:</td>
+      <td>
+        {{ helper.prefix_link(resource) }}
+        {% set resource_type = resource | rdf_property_any(RDF.type) %}
+        {% if resource_type %}
+          ({{ helper.prefix_link(resource_type) }})
+        {% endif %}
+      </td>
+    </tr>
+  {% endfor %}
+
+  {% set root_resource = node | rdf_property_any(VOID.rootResource) %}
+  {% if root_resource %}
+    <tr>
+      <td>Einstiegsressource:</td>
+      <td>{{ helper.prefix_link(root_resource) }}</td>
+    </tr>
+  {% endif %}
+
+  {% set vocabs = node | rdf_property(VOID.vocabulary) %}
+  {% for vocab in vocabs | sort %}
+    <tr>
+      <td>Genutztes Vokabular:</td>
+      <td>
+        {{ helper.prefix_link(vocab)}}
+      </td>
+    </tr>
+  {% endfor %}
+
+  {% set versions = node | rdf_property(DCT.hasVersion) %}
+  {% for version in versions | sort %}
+    <tr>
+      <td>Andere Version:</td>
+      <td>{{ helper.prefix_link(version) }}</td>
+    </tr>
+  {% endfor %}
+
+  {% set data_dumps = node| rdf_property(VOID.dataDump) %}
+  {% for data_dump in data_dumps %}
+    <tr>
+      <td>Datensatz-Download:</td>
+      <td>
+        <a href="{{ data_dump }}">{{ data_dump }}</a>
+      </td>
+    </tr>
+  {% endfor %}
+
+  {% set licenses = node | rdf_property(DCT.license) %}
+  {% for license in licenses %}
+    <tr>
+      <td>Lizenz:</td>
+      <td>
+        <a href="{{ license }}">{{ license }}</a>
+      </td>
+    </tr>
+  {% endfor %}
+
+{% endblock info_table_content %}
+
+              {# 
+
+              {%  capture sources_query %}
+                SELECT ?source
+                WHERE {
+                  ?resourceUri
+                  prov:wasGeneratedBy/prov:used ?source ;
+                } ORDER BY ?source
+                {% endcapture %}
+                {% assign sources = page.rdf | sparql_query: sources_query %}
+                {% if sources.size > 0 %}
+                  {% for row in sources %}
+                    <tr>
+                      <td>Quelle:</td>
+                      <td>{% include core/prefix_url.html iri = row.source.iri %}</td>
+                    </tr>
+                  {% endfor %}
+                {% endif %}
+#}

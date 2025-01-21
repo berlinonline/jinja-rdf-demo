@@ -1,0 +1,9 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+SELECT ?label (lang(?label) as ?lang)
+WHERE {
+    SERVICE <https://query.wikidata.org/sparql> {
+        wd:Q11937 rdfs:label ?label
+    }
+} ORDER BY ?lang

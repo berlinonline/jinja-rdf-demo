@@ -1,0 +1,23 @@
+# basic config
+
+base_url: 'https://berlinonline.github.io/' # the base hostname & protocol for your site, e.g. http://example.com
+base_path: '/jinja-rdf-demo/example/ducks' # the subpath of your site, e.g. /blog
+dataset_path: 'data/ducks/all.ttl'
+template_path: 'templates'
+output_path: '_site/example/ducks/'
+include:
+  - assets/
+prefixes:
+  dct: http://purl.org/dc/terms/
+  ducks: https://berlinonline.github.io/jinja-rdf-demo/example/ducks/
+  family: https://berlinonline.github.io/jinja-rdf-demo/example/ducks/vocab/
+  foaf: http://xmlns.com/foaf/0.1/
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  schema: https://schema.org/
+  void: http://rdfs.org/ns/void#
+  xsd: http://www.w3.org/2001/XMLSchema#
+class_template_mappings:
+  "void:Dataset": "dataset.html.jinja"
+  "schema:Person": "duck.html.jinja"
+
+

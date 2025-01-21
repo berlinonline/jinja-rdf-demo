@@ -1,0 +1,13 @@
+PREFIX ducks: <https://berlinonline.github.io/jinja-rdf-demo/example/ducks/>
+PREFIX schema: <https://schema.org/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+CONSTRUCT {
+    ?duck_one schema:sameAs ?duck_two .
+}
+WHERE {
+    ?duck_one schema:name ?name .
+    ?duck_two schema:name ?name .
+    FILTER (?duck_one != ?duck_two)
+    FILTER (STRSTARTS(STR(?duck_one), STR(ducks:))) 
+}

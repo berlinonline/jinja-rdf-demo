@@ -1,0 +1,14 @@
+# static site output
+_site
+data/temp
+data/ducks/temp
+
+# Python
+venv
+__pycache__
+
+# OS X
+.DS_Store
+
+# dev stuff
+.vscode/
