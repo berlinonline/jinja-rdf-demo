@@ -60,7 +60,7 @@
       {% block content %}
 
         {% block description %}
-          {% set description_text = node | description_any(languages=['de'])%}
+          {% set description_text = node | description_any(languages=['de', 'en'], default='Keine Beschreibung verfügbar.')%}
           {% if description_text %}
             <div class="row">
               <div class="col-12">
