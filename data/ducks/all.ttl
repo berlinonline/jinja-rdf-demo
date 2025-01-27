@@ -11,7 +11,7 @@
 ducks: a void:Dataset ;
     dcterms:created "2024-12-13"^^xsd:date ;
     dcterms:description """Excerpt of the family tree of the fictional character Donald Duck. Sources for the
-    family tree are Wikipedia, for names in different langauges Wikidata."""@en ;
+    family tree are Wikipedia, for names in different languages Wikidata."""@en ;
     dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
     dcterms:modified "2025-01-21"^^xsd:date ;
     dcterms:title "Duck Family Tree"@en ;
@@ -263,7 +263,7 @@ ducks:MatildaMcDuck a schema:Person ;
     schema:sameAs wd:Q2634870 .
 
 ducks:QuagmireMcDuck a schema:Person ;
-    family:hasParent _:n311a98e54332415abb72a6fbd0acf788b1 ;
+    family:hasParent _:nee9bd46c616e4cb4a44642bd0cf2a321b1 ;
     schema:gender "male" ;
     schema:name "David Duck"@de,
         "Quagmire McDuck"@en,
@@ -668,7 +668,7 @@ ducks:DellaDuck a schema:Person ;
     schema:sameAs wd:Q2746774 .
 
 ducks:DingusMcDuck a schema:Person ;
-    family:hasParent _:n311a98e54332415abb72a6fbd0acf788b1 ;
+    family:hasParent _:nee9bd46c616e4cb4a44642bd0cf2a321b1 ;
     schema:additionalName "Dirty"@en ;
     schema:gender "male" ;
     schema:name "Dingus McDuck"@en .
