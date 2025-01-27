@@ -48,7 +48,7 @@
               {% if parent | is_iri %}<a href="{{ parent | relative_uri }}">{% endif %}
                 {{ parent | title_any(['de', 'en'], 'Unbekannt') }}
               {% if parent | is_iri  %}</a>{% endif%}
-              {% set gender = parent | rdf_property_any(SCHEMA.gender) | toPython %}
+              {% set gender = parent | rdf_property_any(SCHEMA.gender) | to_python %}
               {% if gender == 'female' %}
                 (Mutter)
               {% elif gender == 'male' %}
@@ -67,7 +67,7 @@
         <ul>
           {% for child in children %}
             <li><a href="{{ child | relative_uri }}">{{ child | title_any(['de', 'en']) }}</a>
-              {% set gender = child | rdf_property_any(SCHEMA.gender) | toPython %}
+              {% set gender = child | rdf_property_any(SCHEMA.gender) | to_python %}
               {% if gender == 'female' %}
                 (Tochter)
               {% elif gender == 'male' %}
