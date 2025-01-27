@@ -11,7 +11,7 @@ ducks:
     a void:Dataset ;
     dct:title "Duck Family Tree"@en ;
     dct:description """Excerpt of the family tree of the fictional character Donald Duck. Sources for the
-    family tree are Wikipedia, for names in different langauges Wikidata."""@en ;
+    family tree are Wikipedia, for names in different languages Wikidata."""@en ;
     dct:created "2024-12-13"^^xsd:date ;
     dct:modified "2025-01-21"^^xsd:date ;
     dct:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
