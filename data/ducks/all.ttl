@@ -19,11 +19,10 @@ ducks: a void:Dataset ;
     void:exampleResource ducks:DonaldDuck,
         ducks:ScroogeMcDuck ;
     void:feature <http://www.w3.org/ns/formats/Turtle> ;
-    void:vocabulary family:,
-        schema: ;
+    void:vocabulary schema: ;
     rdfs:seeAlso <https://en.wikipedia.org/wiki/Clan_McDuck#Modern_family_tree_by_Don_Rosa>,
         <https://en.wikipedia.org/wiki/Duck_family_(Disney)#Family_tree_by_Don_Rosa> ;
-    foaf:homepage <https://github.com/berlinonline/jinja-rdf> .
+    foaf:homepage <https://github.com/berlinonline/jinja-rdf-demo> .
 
 ducks:AbnerDuck a schema:Person ;
     family:hasParent ducks:EiderDuck,
@@ -263,7 +262,7 @@ ducks:MatildaMcDuck a schema:Person ;
     schema:sameAs wd:Q2634870 .
 
 ducks:QuagmireMcDuck a schema:Person ;
-    family:hasParent _:nee9bd46c616e4cb4a44642bd0cf2a321b1 ;
+    family:hasParent _:nfcd857ee0e1844b4ae1d405f2af50812b1 ;
     schema:gender "male" ;
     schema:name "David Duck"@de,
         "Quagmire McDuck"@en,
@@ -668,7 +667,7 @@ ducks:DellaDuck a schema:Person ;
     schema:sameAs wd:Q2746774 .
 
 ducks:DingusMcDuck a schema:Person ;
-    family:hasParent _:nee9bd46c616e4cb4a44642bd0cf2a321b1 ;
+    family:hasParent _:nfcd857ee0e1844b4ae1d405f2af50812b1 ;
     schema:additionalName "Dirty"@en ;
     schema:gender "male" ;
     schema:name "Dingus McDuck"@en .

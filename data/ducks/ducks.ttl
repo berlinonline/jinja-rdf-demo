@@ -15,14 +15,14 @@ ducks:
     dct:created "2024-12-13"^^xsd:date ;
     dct:modified "2025-01-21"^^xsd:date ;
     dct:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
-    foaf:homepage <https://github.com/berlinonline/jinja-rdf> ;
+    foaf:homepage <https://github.com/berlinonline/jinja-rdf-demo> ;
     void:dataDump <https://raw.githubusercontent.com/berlinonline/jinja-rdf-demo/main/data/ducks/all.ttl> ;
     void:feature <http://www.w3.org/ns/formats/Turtle> ;
     rdfs:seeAlso <https://en.wikipedia.org/wiki/Duck_family_(Disney)#Family_tree_by_Don_Rosa> ;
     rdfs:seeAlso <https://en.wikipedia.org/wiki/Clan_McDuck#Modern_family_tree_by_Don_Rosa> ;
     void:exampleResource ducks:DonaldDuck ;
     void:exampleResource ducks:ScroogeMcDuck ;
-    void:vocabulary schema: , family: ;
+    void:vocabulary schema: ;
 .
 
 # Characters
