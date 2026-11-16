@@ -29,7 +29,9 @@ ducks:
 ducks:DonaldDuck a schema:Person ;
     schema:name  "Donald Duck"@en, "Donald Duck"@de, "Donald Duck"@fr, "Pato Donald"@es, "Anders And"@da ;
     schema:gender "male" ;
-    family:hasParent ducks:QuackmoreDuck, ducks:HortenseMcDuck .
+    family:hasParent ducks:QuackmoreDuck, ducks:HortenseMcDuck ;
+    family:hasFavouriteNephews (ducks:Huey ducks:Louie ducks:Dewey) ;
+.
 
 ducks:DellaDuck a schema:Person ;
     schema:name "Della Duck"@en, "Della Duck"@de, "Della Duck"@fr, "Bella Pato"@es, "Della And"@da ;

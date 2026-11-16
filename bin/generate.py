@@ -30,3 +30,9 @@ generator.clear_site()
 generator.generate_site(resources)
 if args.serve:
     generator.serve_site()
+
+
+# require template repos
+# add template repos to config
+# site_generator inits template repos main class
+# template class copies its templates to ${TEMPLATE_FOLDER}/${TEMPLATE_REPO_NAME}

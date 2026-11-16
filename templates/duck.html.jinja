@@ -124,4 +124,21 @@
     {% endif %}
   </div>
 
+  {# Of course nobody really has faourite nephews in Duck Town, this is only here to illustrate the rdf_list filter: #}
+  {% set favourite_nephews = node | rdf_property_any(FAMILY.hasFavouriteNephews) %}
+  {% if favourite_nephews %}
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <h2>Lieblingsneffen</h2>
+        <ol>
+          {% for nephew in favourite_nephews | rdf_list %}
+            <li>
+              <a href="{{ nephew | relative_uri }}">{{ nephew | title_any(['de', 'en']) }}</a>
+            </li>
+          {% endfor %}
+        </ol>
+      </div>
+    </div>
+  {% endif %}
+
 {% endblock content %}

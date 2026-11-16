@@ -45,9 +45,6 @@ clean-ducks:
 # data/ducks/duck_names_fixed.txt: data/ducks/duck_names.csv
 
 
-data/all.ttl: data/ducks.ttl data/wikidata_labels.ttl data/wikidata_links.ttl
-	rdfpipe -i turtle $^ > $@
-
 generate-ducks:
 	python bin/generate.py --config config/ducks.yml
 
